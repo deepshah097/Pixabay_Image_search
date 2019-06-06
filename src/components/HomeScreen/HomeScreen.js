@@ -5,6 +5,7 @@ export default class HomeScreen extends Component {
     let deferredPrompt;
 
     window.addEventListener("beforeinstallprompt", e => {
+      console.log("inside the before install");
       // Prevent Chrome 67 and earlier from automatically showing the prompt
       e.preventDefault();
       // Stash the event so it can be triggered later.
