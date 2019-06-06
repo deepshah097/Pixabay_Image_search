@@ -26,6 +26,7 @@ export function register(config) {
     let deferredPrompt;
     window.addEventListener("appinstalled", () => {
       console.log("app installed successfully");
+      btnAdd.style.display = "none";
     });
     if (window.matchMedia("(display-mode: standalone)").matches) {
       console.log("display-mode is standalone");
