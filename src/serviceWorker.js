@@ -24,6 +24,12 @@ export function register(config) {
   if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
     console.log("inside the service worker");
     let deferredPrompt;
+    window.addEventListener("appinstalled", () => {
+      console.log("app installed successfully");
+    });
+    if (window.matchMedia("(display-mode: standalone)").matches) {
+      console.log("display-mode is standalone");
+    }
 
     window.addEventListener("beforeinstallprompt", e => {
       console.log("inside the before install");
@@ -64,13 +70,6 @@ export function register(config) {
       // from what our page is served on. This might happen if a CDN is used to
       // serve assets; see https://github.com/facebook/create-react-app/issues/2374
       return;
-    }
-    window.addEventListener("appinstalled", () => {
-      console.log("app installed successfully");
-    });
-
-    if (window.matchMedia("(display-mode: standalone)").matches) {
-      console.log("display-mode is standalone");
     }
 
     window.addEventListener("load", () => {
