@@ -22,6 +22,7 @@ const isLocalhost = Boolean(
 
 export function register(config) {
   if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
+    console.log("inside the service worker");
     let deferredPrompt;
 
     window.addEventListener("beforeinstallprompt", e => {
