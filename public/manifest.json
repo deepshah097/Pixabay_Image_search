@@ -1,11 +1,11 @@
 {
-  "short_name": "React App",
+  "short_name": "Mayur",
   "name": "Image Finder",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "144x144",
-      "type": "image/x-icon"
+      "src": "https://viu-static.akamaized.net/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "start_url": "/",
