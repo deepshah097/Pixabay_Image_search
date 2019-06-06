@@ -24,6 +24,12 @@ export function register(config) {
   if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
     console.log("inside the service worker");
     let deferredPrompt;
+    window.addEventListener("appinstalled", () => {
+      console.log("app installed successfully");
+    });
+    if (window.matchMedia("(display-mode: standalone)").matches) {
+      console.log("display-mode is standalone");
+    }
 
     window.addEventListener("beforeinstallprompt", e => {
       console.log("inside the before install");
@@ -52,6 +58,7 @@ export function register(config) {
         } else {
           console.log("User dismissed the A2HS prompt");
           console.log("user cancel to the home page ");
+          btnAdd.style.display = "block";
         }
         deferredPrompt = null;
       });
