@@ -29,6 +29,8 @@ export function register(config) {
     });
     if (window.matchMedia("(display-mode: standalone)").matches) {
       console.log("display-mode is standalone");
+    } else {
+      console.log("not open in the standalone app");
     }
 
     window.addEventListener("beforeinstallprompt", e => {
