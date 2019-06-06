@@ -30,7 +30,7 @@ export function register(config) {
       e.preventDefault();
       // Stash the event so it can be triggered later.
       deferredPrompt = e;
-      console.log("mayur is awesome", deferredPrompt);
+      console.log("inside the deferredPrompt ", deferredPrompt);
 
       // Update UI to notify the user they can add to home screen
       // document.querySelector(".add-button").style.display = "block";
@@ -47,8 +47,10 @@ export function register(config) {
       deferredPrompt.userChoice.then(choiceResult => {
         if (choiceResult.outcome === "accepted") {
           console.log("User accepted the A2HS prompt");
+          console.log("user added to the home page ");
         } else {
           console.log("User dismissed the A2HS prompt");
+          console.log("user cancel to the home page ");
         }
         deferredPrompt = null;
       });
@@ -61,6 +63,13 @@ export function register(config) {
       // from what our page is served on. This might happen if a CDN is used to
       // serve assets; see https://github.com/facebook/create-react-app/issues/2374
       return;
+    }
+    window.addEventListener("appinstalled", () => {
+      console.log("app installed successfully");
+    });
+
+    if (window.matchMedia("(display-mode: standalone)").matches) {
+      console.log("display-mode is standalone");
     }
 
     window.addEventListener("load", () => {
