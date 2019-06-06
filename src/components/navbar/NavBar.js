@@ -1,6 +1,7 @@
 import React from "react";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
+import HomeScreen from "../HomeScreen/HomeScreen";
 
 const styles = {
   root: {
@@ -17,7 +18,7 @@ function NavBar(props) {
       <Toolbar variant="dense">
         <Typography variant="h6" color="inherit">
           Pixabay Image Finder
-          <button className="add-button">Add to home screen</button>
+          <HomeScreen />
         </Typography>
       </Toolbar>
     </AppBar>
