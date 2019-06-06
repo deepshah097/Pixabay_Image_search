@@ -18,6 +18,7 @@ function NavBar(props) {
         <Toolbar variant="dense">
           <Typography variant="h6" color="inherit">
             Pixabay Image Finder
+            <button className="add-button">Add to home screen</button>
           </Typography>
         </Toolbar>
       </AppBar>
