@@ -15,7 +15,7 @@ export class App extends Component {
         <button id="btn-deep">MDP</button>
         <div id="div-gotit">
           <label>
-            You have already installed the app go to crome setting and open the
+            You have already installed the app go to chrome setting and open the
             app
           </label>
           <button id="btn-gotit">Got it</button>

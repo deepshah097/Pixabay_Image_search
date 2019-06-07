@@ -65,6 +65,7 @@ export function register(config) {
           if (choiceResult.outcome === "accepted") {
             console.log("User accepted the A2HS prompt");
             console.log("user added to the home page ");
+            btnAdd.style.display = "block";
           } else {
             console.log("User dismissed the A2HS prompt");
             console.log("user cancel to the home page ");
