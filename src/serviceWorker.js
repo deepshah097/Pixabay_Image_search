@@ -28,13 +28,13 @@ export function register(config) {
       console.log("app installed successfully");
     });
 
-    setInterval(() => {
-      if (window.matchMedia("(display-mode: standalone)").matches) {
-        console.log("display-mode is standalone");
-      } else {
-        console.log("not open in the standalone app");
-      }
-    }, 5000);
+    // setInterval(() => {
+    if (window.matchMedia("(display-mode: standalone)").matches) {
+      console.log("display-mode is standalone");
+    } else {
+      console.log("not open in the standalone app");
+    }
+    // }, 5000);
 
     window.addEventListener("beforeinstallprompt", e => {
       console.log("inside the before install");
