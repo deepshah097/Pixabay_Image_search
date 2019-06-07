@@ -28,6 +28,11 @@ export function register(config) {
       window.addEventListener("appinstalled", () => {
         console.log("app installed successfully");
       });
+      if (window.addEventListener("appinstalled")) {
+        console.log("installed");
+      } else {
+        console.log("not installed");
+      }
     }, 5000);
 
     setInterval(() => {
