@@ -24,16 +24,14 @@ export function register(config) {
   if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
     console.log("inside the service worker");
     let deferredPrompt;
-    setInterval(() => {
-      window.addEventListener("appinstalled", () => {
-        console.log("app installed successfully");
-      });
-      if (window.addEventListener("appinstalled")) {
-        console.log("installed");
-      } else {
-        console.log("not installed");
-      }
-    }, 5000);
+    window.addEventListener("appinstalled", () => {
+      console.log("app installed successfully");
+    });
+    if (window.addEventListener("appinstalled")) {
+      console.log("installed");
+    } else {
+      console.log("not installed");
+    }
 
     setInterval(() => {
       if (window.matchMedia("(display-mode: standalone)").matches) {
