@@ -27,11 +27,6 @@ export function register(config) {
     window.addEventListener("appinstalled", () => {
       console.log("app installed successfully");
     });
-    if (window.addEventListener("appinstalled")) {
-      console.log("installed");
-    } else {
-      console.log("not installed");
-    }
 
     setInterval(() => {
       if (window.matchMedia("(display-mode: standalone)").matches) {
