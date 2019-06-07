@@ -49,6 +49,9 @@ export function register(config) {
     });
 
     const btnAdd = document.querySelector("#btn-deep");
+    const divgotit = document.querySelector("#div-gotit");
+    const btngotit = document.querySelector("#btn-gotit");
+    divgotit.style.display = "none";
     // Installation must be done by a user gesture! Here, the button click
     btnAdd.addEventListener("click", e => {
       // hide our user interface that shows our A2HS button
@@ -71,7 +74,12 @@ export function register(config) {
         });
       } else {
         console.log("not open deferred already installed");
+        divgotit.style.display = "block";
       }
+    });
+    btngotit.addEventListener("click", e => {
+      divgotit.style.display = "none";
+      btnAdd.style.display = "block";
     });
 
     // The URL constructor is available in all browsers that support SW.

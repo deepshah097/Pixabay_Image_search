@@ -13,6 +13,12 @@ export class App extends Component {
         {/* <NavBar /> */}
         {/* <Search /> */}
         <button id="btn-deep">MDP</button>
+        <div id="div-gotit">
+          <label>
+            You have already installed the app go to setting and open the app
+          </label>
+          <button id="btn-gotit">Got it</button>
+        </div>
       </div>
       //  </MuiThemeProvider>
     );
