@@ -57,21 +57,21 @@ export function register(config) {
       if (deferredPrompt) {
         deferredPrompt.prompt();
         console.log("open deferredPrompt");
+        // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice.then(choiceResult => {
+          if (choiceResult.outcome === "accepted") {
+            console.log("User accepted the A2HS prompt");
+            console.log("user added to the home page ");
+          } else {
+            console.log("User dismissed the A2HS prompt");
+            console.log("user cancel to the home page ");
+            btnAdd.style.display = "block";
+          }
+          deferredPrompt = null;
+        });
       } else {
-        console.log("not open deferred");
+        console.log("not open deferred already installed");
       }
-      // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice.then(choiceResult => {
-        if (choiceResult.outcome === "accepted") {
-          console.log("User accepted the A2HS prompt");
-          console.log("user added to the home page ");
-        } else {
-          console.log("User dismissed the A2HS prompt");
-          console.log("user cancel to the home page ");
-          btnAdd.style.display = "block";
-        }
-        deferredPrompt = null;
-      });
     });
 
     // The URL constructor is available in all browsers that support SW.
