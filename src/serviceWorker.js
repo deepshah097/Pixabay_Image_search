@@ -56,8 +56,8 @@ export function register(config) {
       // hide our user interface that shows our A2HS button
       btnAdd.style.display = "none";
       // Show the prompt
-
-      if (deferredPrompt.prompt()) {
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
         console.log("open deferredPrompt");
       } else {
         console.log("not open deferred");
