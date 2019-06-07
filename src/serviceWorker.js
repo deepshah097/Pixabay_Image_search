@@ -24,14 +24,19 @@ export function register(config) {
   if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
     console.log("inside the service worker");
     let deferredPrompt;
-    window.addEventListener("appinstalled", () => {
-      console.log("app installed successfully");
-    });
-    if (window.matchMedia("(display-mode: standalone)").matches) {
-      console.log("display-mode is standalone");
-    } else {
-      console.log("not open in the standalone app");
-    }
+    setInterval(() => {
+      window.addEventListener("appinstalled", () => {
+        console.log("app installed successfully");
+      });
+    }, 5000);
+
+    setInterval(() => {
+      if (window.matchMedia("(display-mode: standalone)").matches) {
+        console.log("display-mode is standalone");
+      } else {
+        console.log("not open in the standalone app");
+      }
+    }, 5000);
 
     window.addEventListener("beforeinstallprompt", e => {
       console.log("inside the before install");
